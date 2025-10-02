@@ -1,0 +1,91 @@
+.who-uses-skillive {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #222;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .tab-btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .tab-btn:hover {
+    background: #eee;
+  }
+  
+  .tab-btn.active {
+    background: #ede9fe;
+    color: #5b21b6;
+    border-color: #c4b5fd;
+    font-weight: 600;
+  }
+  
+  /* Tasks */
+  .tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .task-chip {
+    padding: 8px 14px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #444;
+    border: 1px solid #e2e2e2;
+  }
+  
+  /* Image */
+  .image-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .who-uses-skillive {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .tabs {
+      justify-content: center;
+    }
+  
+    .tasks {
+      justify-content: center;
+    }
+  }
+  
