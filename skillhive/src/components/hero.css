@@ -1,0 +1,373 @@
+/* --- HERO SECTION - Desktop Styles (White Background) --- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 120px; 
+  padding-bottom: 80px;
+  background-color: #ffffff; /* White background */
+  color: #1f2937; /* Dark text for contrast */
+}
+
+/* --- HERO CONTENT (Desktop: Left, Mobile: Top) --- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  gap: 3rem; /* Reduced gap to bring image closer */
+  padding: 0 1.5rem;
+  padding-right: calc(45% + 3rem); /* Adjusted for new image width */
+}
+
+.hero-text {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  /* Remove any default color or gradient from the container */
+  color: inherit;
+}
+
+/* NEW STYLING FOR "Find your" */
+.find-your-text {
+  color: #374151; /* A slightly lighter, distinct dark gray */
+  font-weight: 700; /* Slightly lighter than perfect match */
+  display: block; /* Ensure it's on its own line */
+}
+
+/* NEW STYLING FOR "perfect match" */
+.perfect-match-text {
+  /* Apply gradient only to "perfect match" */
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Make the text itself transparent */
+  display: block; /* Ensure it's on its own line */
+}
+
+.hero-title.animate-fade-in {
+  animation: fadeInFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* --- HERO DESCRIPTION --- */
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #4b5563;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.hero-description.animate-slide-up {
+  animation: slideInFromBottom 0.7s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* --- HERO ACTIONS --- */
+.hero-actions {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.hero-actions.animate-slide-up {
+  animation: slideInFromBottom 0.7s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.btn-large {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.btn-secondary:hover {
+  background-color: #ede9fe;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+/* --- TRUST INDICATORS --- */
+.hero-trust {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.hero-trust.animate-fade-in {
+  animation: slideInFromBottom 0.6s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.trust-indicators {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b7280;
+  opacity: 0.9;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.trust-dot {
+  position: absolute;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  animation: pulse 2s infinite;
+}
+
+.trust-dot-green { 
+  background-color: #10b981; 
+}
+.trust-dot-blue { 
+  background-color: #3b82f6; 
+}
+
+/* --- HERO BACKGROUND (Desktop: Right, Mobile: Below) --- */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 45%; /* Increased to 45% to bring it closer to text */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; 
+  transform: translateX(30px); /* Start off-screen to the right */
+  opacity: 0;
+}
+
+.hero-bg.animate-fade-in {
+  animation: fadeInFromRight 0.8s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* --- SCROLL INDICATOR --- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #6b7280;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { 
+    transform: translateX(-50%) translateY(0); 
+  }
+  40%, 43% { 
+    transform: translateX(-50%) translateY(-8px); 
+  }
+  70% { 
+    transform: translateX(-50%) translateY(-4px); 
+  }
+}
+
+/* ========================================= */
+/* ===== RESPONSIVE STYLES (Mobile Fixes) ===== */
+/* ========================================= */
+
+@media (max-width: 1024px) {
+  .hero-bg { 
+    width: 50%; 
+  }
+  .hero-title { 
+    font-size: 3.25rem; 
+  }
+  .hero-content {
+    padding-right: calc(50% + 3rem); /* Adjust padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .hero-content { 
+    justify-content: flex-start;
+    padding: 0 1.5rem;
+    align-items: stretch;
+  }
+  
+  .hero-text { 
+    max-width: 100%;
+    text-align: left;
+    align-items: stretch;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  /* Actions: Full-width buttons */
+  .hero-actions { 
+    flex-direction: column; 
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn-large {
+    justify-content: center;
+  }
+
+  .trust-indicators { 
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start; 
+  }
+
+  /* Image - Now below text on mobile */
+  .hero-bg { 
+    position: static;
+    width: 100%; 
+    height: 300px;
+    padding: 0;
+    margin-top: 2rem; /* Move below text */
+  }
+
+  .hero-bg-image {
+    max-height: 300px; 
+    width: 100%;
+    display: block;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+}

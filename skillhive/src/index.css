@@ -35,7 +35,16 @@ body {
 }
 
 .main-content {
-  padding-top: 80px; /* Space for fixed navbar */
+  padding-top: 70px; /* Space for fixed navbar */
+}
+
+/* ===== SECTION SPACING ===== */
+.main-content > section {
+  margin-bottom: 40px;
+}
+
+.main-content > section:last-child {
+  margin-bottom: 0;
 }
 
 .hero-placeholder {
@@ -140,8 +149,54 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .main-content {
+    padding-top: 60px;
+  }
+  
+  .main-content > section {
+    margin-bottom: 60px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
+  }
+  
+  .main-content {
+    padding-top: 60px;
+  }
+  
+  .main-content > section {
+    margin-bottom: 80px; /* Increased spacing on mobile */
+  }
+  
+  /* Better button spacing on mobile */
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    min-height: 44px; /* Touch-friendly size */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .main-content {
+    padding-top: 56px;
+  }
+  
+  .main-content > section {
+    margin-bottom: 100px; /* Even more spacing on small mobile */
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 280px;
   }
 }

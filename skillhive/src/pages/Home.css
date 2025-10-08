@@ -1,0 +1,63 @@
+/* ===== HOME PAGE GLOBAL STYLES ===== */
+.home-page {
+  overflow-x: hidden;
+}
+
+/* ===== MOBILE-FIRST IMPROVEMENTS ===== */
+
+/* Ensure proper spacing between sections on mobile */
+@media (max-width: 768px) {
+  .home-page > * {
+    margin-bottom: 0;
+  }
+  
+  /* Add consistent mobile padding */
+  .home-page section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Improve text readability on mobile */
+  .home-page h1,
+  .home-page h2,
+  .home-page h3 {
+    line-height: 1.2;
+  }
+  
+  .home-page p {
+    line-height: 1.6;
+  }
+}
+
+/* ===== TABLET OPTIMIZATIONS ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-page section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ===== DESKTOP OPTIMIZATIONS ===== */
+@media (min-width: 1025px) {
+  .home-page {
+    max-width: 100%;
+  }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+  .home-page * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .home-page {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --border-color: #000000;
+  }
+}

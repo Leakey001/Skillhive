@@ -1,0 +1,306 @@
+/* --- AIEA SECTION: WHITE/LIGHT THEME --- */
+
+/* --- CSS Variables for a consistent light theme --- */
+:root {
+  --aiea-bg: #f9fafb; /* Off-white / Cool Gray 50 */
+  --aiea-card-bg: #ffffff;
+  --aiea-border-color: #e5e7eb; /* Cool Gray 200 */
+  --aiea-text-primary: #1f2937; /* Cool Gray 800 */
+  --aiea-text-secondary: #4b5563; /* Cool Gray 600 */
+  --aiea-text-tertiary: #6b7280; /* Cool Gray 500 */
+  --aiea-accent: #0ea5e9; /* Sky Blue 500 */
+  --aiea-accent-human: #8b5cf6; /* Violet 500 */
+}
+
+.aiea {
+  background-color: var(--aiea-bg);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.aiea-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* --- Header Section --- */
+.aiea-header {
+  text-align: center;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.aiea-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--aiea-text-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.aiea-description {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--aiea-text-secondary);
+  line-height: 1.7;
+}
+
+/* --- Interactive Demo --- */
+.aiea-demo {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background-color: var(--aiea-card-bg);
+  border: 1px solid var(--aiea-border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 450px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+.demo-sidebar {
+  background-color: var(--aiea-card-bg);
+  border-right: 1px solid var(--aiea-border-color);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-sidebar-header {
+  margin-bottom: 1.5rem;
+}
+
+.demo-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--aiea-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.task-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-button {
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--aiea-text-secondary);
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.task-button:hover {
+  background-color: #f3f4f6; /* Cool Gray 100 */
+  color: var(--aiea-text-primary);
+}
+
+.task-button.active {
+  background-color: #f3f4f6; /* Cool Gray 100 */
+  color: var(--aiea-text-primary);
+}
+
+/* Active indicator bar */
+.task-button.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background-color: var(--aiea-accent);
+  border-radius: 2px;
+}
+
+.demo-main {
+  background: var(--aiea-card-bg);
+  padding: 32px;
+}
+
+.collaboration-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.collaboration-side {
+  padding: 24px;
+  border: 1px solid var(--aiea-border-color);
+  border-radius: 12px;
+  background-color: var(--aiea-bg); /* Use main bg for an "inset" look */
+}
+
+.side-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.side-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.ai-side .side-icon {
+  background-color: #e0f2fe; /* Sky Blue 100 */
+  color: var(--aiea-accent);
+}
+
+.human-side .side-icon {
+  background-color: #ede9fe; /* Violet 100 */
+  color: var(--aiea-accent-human);
+}
+
+.side-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--aiea-text-primary);
+}
+
+.action-list {
+  list-style: none;
+  padding-left: 12px;
+  margin: 0;
+}
+
+.action-item {
+  color: var(--aiea-text-secondary);
+  font-size: 0.95rem;
+  padding: 6px 0;
+  position: relative;
+}
+
+.action-item::before {
+  content: '—';
+  position: absolute;
+  left: -12px;
+  color: var(--aiea-text-tertiary);
+}
+
+.collaboration-connector {
+  height: 24px;
+  width: 1px;
+  background-image: linear-gradient(to bottom, var(--aiea-border-color) 50%, transparent 50%);
+  background-size: 1px 8px;
+  margin: 0 auto;
+}
+
+.task-description {
+    text-align: center;
+    color: var(--aiea-text-tertiary);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Benefits Section --- */
+.aiea-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: var(--aiea-card-bg);
+  border: 1px solid var(--aiea-border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07);
+}
+
+.benefit-icon {
+  color: var(--aiea-accent);
+  margin-bottom: 1rem;
+}
+
+.benefit-icon svg {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+}
+
+.benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--aiea-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.benefit-description {
+  color: var(--aiea-text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Animations --- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .aiea-demo {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .aiea {
+    padding: 80px 0;
+  }
+  .aiea-demo {
+    grid-template-columns: 1fr;
+  }
+  .demo-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--aiea-border-color);
+  }
+  .task-selector {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--aiea-border-color) transparent;
+  }
+  .task-button {
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+  }
+  .aiea-benefits {
+    grid-template-columns: 1fr;
+  }
+}

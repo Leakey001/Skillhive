@@ -1,0 +1,179 @@
+/* ===== QUALITY SUPPORT SECTION (REDESIGNED) ===== */
+
+:root {
+  --qs-bg: #ffffff;
+  --qs-text-primary: #111827; /* Gray 900 */
+  --qs-text-secondary: #4b5563; /* Gray 600 */
+  --qs-border-color: #e5e7eb; /* Gray 200 */
+  --qs-icon-bg: #f3f4f6; /* Gray 100 */
+  --qs-accent: #2563eb; /* Blue 600 */
+}
+
+.quality-support {
+  background-color: var(--qs-bg);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* --- Main Two-Column Layout --- */
+.quality-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Left Column: Text Content --- */
+.quality-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quality-title {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--qs-text-primary);
+  line-height: 1.2;
+}
+
+.quality-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--qs-text-secondary);
+  max-width: 480px; /* Constrain line length for readability */
+}
+
+.quality-cta {
+  margin-top: 1rem;
+}
+
+.quality-cta .btn-primary {
+  margin-bottom: 0.75rem;
+}
+
+.quality-cta-text {
+  color: var(--qs-text-secondary);
+  font-size: 0.875rem;
+}
+
+
+/* --- Right Column: List of Quality Points --- */
+.quality-points-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.quality-point-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--qs-border-color);
+  transition: background-color 0.3s ease;
+}
+
+.quality-point-item:first-child {
+  padding-top: 0;
+}
+
+.quality-point-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.quality-point-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: var(--qs-icon-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--qs-accent);
+  transition: all 0.3s ease;
+}
+
+.quality-point-item:hover .quality-point-icon {
+  background-color: var(--qs-accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.quality-point-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--qs-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.quality-point-description {
+  color: var(--qs-text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* --- General Animations --- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 900px) {
+  .quality-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  
+  .quality-text-content {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .quality-description {
+    max-width: 600px;
+  }
+  
+  .quality-point-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quality-support {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .quality-title {
+    font-size: 2rem;
+  }
+
+  .quality-point-item {
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .quality-point-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .quality-point-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

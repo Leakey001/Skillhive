@@ -1,0 +1,158 @@
+/* ===== GLOBAL VARIABLES (for consistency) ===== */
+:root {
+  --color-primary: #581BF5;
+  --color-secondary: #7c3aed;    /* Purple 600 */
+  --color-text-primary: #111827; /* Gray 900 */
+  --color-text-secondary: #4b5563;/* Gray 600 */
+  --color-surface: #f9fafb;      /* Gray 50 for background */
+  --color-border: #e5e7eb;       /* Gray 200 */
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --transition-fast: all 0.2s ease-out;
+}
+
+/* ===== HOW IT WORKS SECTION ===== */
+.how-it-works-section {
+  padding: 6rem 0;
+  background-color: var(--color-surface);
+  text-align: center;
+  overflow: hidden; /* Ensures no overflow from large numbers */
+}
+
+/* Shared container style */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: 2.5rem; /* 40px */
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.125rem; /* 18px */
+  color: var(--color-text-secondary);
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== STEPS CONTAINER & CONNECTING LINE ===== */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Reduced gap for a tighter look */
+  position: relative; /* Parent for the connecting line */
+}
+
+/* The vertical connecting line */
+.steps-container::before {
+  content: '';
+  position: absolute;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-image: linear-gradient(to bottom, var(--color-border) 40%, transparent 100%);
+  background-size: 10px 10px;
+  z-index: 0;
+}
+
+/* ===== INDIVIDUAL STEP ITEM (NEW: GRADIENT BORDER CONTAINER) ===== */
+.step-item {
+  position: relative;
+  z-index: 1;
+  padding: 2px; /* This padding creates the border thickness */
+  border-radius: 14px; /* Slightly larger than the inner card */
+  background: linear-gradient(165deg, var(--color-primary), var(--color-secondary));
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  max-width: 500px;
+  width: 100%;
+}
+
+.step-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.15), 0 8px 10px -6px rgba(79, 70, 229, 0.15);
+}
+
+.step-content {
+  background-color: #ffffff; /* White background to sit inside the gradient frame */
+  padding: 2.5rem 2rem; /* Increased padding */
+  border-radius: 12px; /* Inner card rounding */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large decorative step number */
+.step-number {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -0.5rem;
+  font-size: 7rem; /* 112px */
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.03); /* More subtle color */
+  z-index: 0;
+  line-height: 1;
+  user-select: none;
+}
+
+.step-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.75rem 0;
+  position: relative; /* To be above the background number */
+  z-index: 1;
+  text-align: left; /* Align text left for a cleaner look */
+}
+
+.step-description {
+  font-size: 1rem; /* 16px */
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  position: relative; /* To be above the background number */
+  z-index: 1;
+  text-align: left;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .how-it-works-section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem; /* 32px */
+  }
+
+  .section-subtitle {
+    font-size: 1rem; /* 16px */
+  }
+
+  .step-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .step-number {
+    font-size: 6rem; /* 96px */
+  }
+
+  .step-title {
+    font-size: 1.25rem; /* 20px */
+  }
+}

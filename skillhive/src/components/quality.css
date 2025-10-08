@@ -1,0 +1,107 @@
+/* ===== QUALITY SECTION ===== */
+.quality {
+  padding: 5rem 0;
+  background-color: #f9fafb; /* Added a light background for contrast */
+  overflow: hidden;
+}
+
+.quality-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Increased gap for better spacing */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== TEXT CONTENT ===== */
+.quality-text {
+  flex: 1 1 50%; /* Allows the text block to grow and shrink */
+}
+
+.quality-title {
+  font-size: 2.75rem; /* Slightly adjusted for balance */
+  font-weight: 800;
+  line-height: 1.2;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.quality-desc {
+  font-size: 1.125rem;
+  line-height: 1.8; /* Increased for readability */
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.quality-link {
+  all: unset; /* Reset button styles */
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4f46e5; /* Using primary color */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-out;
+}
+
+.quality-link::after {
+  content: '→'; /* Adds an arrow for better affordance */
+  transition: transform 0.2s ease-out;
+}
+
+.quality-link:hover {
+  color: #4338ca; /* Darker shade on hover */
+}
+
+.quality-link:hover::after {
+  transform: translateX(4px); /* Moves arrow on hover */
+}
+
+
+/* ===== IMAGE WRAPPER & STYLING ===== */
+.quality-image-wrapper {
+  flex: 1 1 50%; /* Allows the image block to grow and shrink */
+  min-width: 0; /* Prevents flexbox overflow issues */
+}
+
+.quality-image {
+  width: 100%;
+  height: 100%;
+  max-height: 500px; /* Constrains image height */
+  object-fit: cover;
+  border-radius: 1.5rem; /* Softer radius */
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+}
+
+/* ===== RESPONSIVE DESIGN (MOBILE) ===== */
+@media (max-width: 768px) {
+  .quality-container {
+    /* This is the key change: it reverses the visual order of the flex items */
+    flex-direction: column;
+  }
+
+  .quality {
+    padding: 4rem 0;
+  }
+
+  .quality-text {
+    text-align: center; /* Center text on mobile */
+  }
+
+  .quality-title {
+    font-size: 2.25rem;
+  }
+
+  .quality-desc {
+    font-size: 1rem;
+  }
+
+  .quality-image-wrapper {
+    /* Add some space between the text and the image on mobile */
+    margin-top: 3rem;
+    width: 100%; /* Ensure it takes full width */
+  }
+}

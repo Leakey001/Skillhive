@@ -1,0 +1,222 @@
+/* ===== GLOBAL VARIABLES ===== */
+:root {
+    --color-primary: #581BF5;
+    --color-primary-dark: #581BF5;
+    --color-text-primary: #111827;
+    --color-text-secondary: #4b5563;
+    --color-background: #ffffff;
+    --color-surface: #f9fafb;
+    --color-border: #e5e7eb;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --radius-lg: 12px;
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Base animation for elements fading in on scroll */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .get-started-page {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    padding-top: 70px; /* Account for fixed Navbar */
+  }
+  
+  /* Re-use global container class */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  /* ===== WHITE HERO SECTION ===== */
+  .get-started-hero {
+    background-color: var(--color-background);
+    padding: 6rem 0;
+    text-align: center;
+  }
+  
+  .get-started-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.15;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  .get-started-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    animation: fadeInUp 0.5s ease-out 0.1s;
+    animation-fill-mode: both; /* Keeps styles before animation starts */
+  }
+  
+  /* ===== TRUSTED BY SECTION ===== */
+  .trusted-by-section {
+    animation: fadeInUp 0.5s ease-out 0.2s;
+    animation-fill-mode: both;
+  }
+  .trusted-by-title {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+  .trusted-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    filter: grayscale(100%);
+    opacity: 0.6;
+  }
+  /* New style for the company text */
+  .logo-text {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #6b7280;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .trusted-logos:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  
+  .logo-text:hover {
+    color: var(--color-text-primary);
+  }
+  
+  
+  /* ===== MAIN CONTENT (TWO-COLUMN) ===== */
+  .get-started-main-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* Left column slightly larger */
+    gap: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+  
+  .section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .section-intro {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+  }
+  .why-skillhive-content, .signup-form-wrapper {
+    animation: fadeInUp 0.6s ease-out 0.3s;
+    animation-fill-mode: both;
+  }
+  
+  /* ===== LEFT COLUMN: BENEFITS & TESTIMONIAL ===== */
+  .benefits-list { display: flex; flex-direction: column; gap: 2rem; }
+  .benefit-card { display: flex; gap: 1.5rem; align-items: flex-start; }
+  .benefit-card-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 4px; }
+  .benefit-card-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .benefit-card-description { font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6; }
+  
+  .testimonial-block {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+  .testimonial-block blockquote {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1.5rem;
+    margin: 0 0 1rem 0;
+  }
+  .testimonial-block cite {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: calc(1.5rem + 3px);
+  }
+  .cite-name { font-weight: 600; font-size: 0.95rem; }
+  .cite-title { font-size: 0.9rem; color: var(--color-text-secondary); }
+  
+  /* ===== RIGHT COLUMN: STICKY FORM ===== */
+  .signup-form-column { position: relative; } /* Needed for sticky positioning */
+  .signup-form-wrapper {
+    position: sticky;
+    top: 100px; /* Space from top after scrolling past navbar */
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .signup-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .form-group label { display: block; font-weight: 500; font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  
+  .submit-btn {
+    all: unset;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition-smooth);
+  }
+  .submit-btn:hover { background-color: var(--color-primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-xl); }
+  .form-footer-text { font-size: 0.8rem; text-align: center; color: #9ca3af; margin-top: 0.5rem; }
+  
+  
+  /* ===== RESPONSIVE STYLES ===== */
+  @media (max-width: 1024px) {
+    .get-started-main-content { grid-template-columns: 1fr; } /* Stack columns */
+    .signup-form-wrapper { position: static; top: auto; } /* Disable sticky form */
+    .why-skillhive-column { margin-bottom: 3rem; }
+  }
+  
+  @media (max-width: 768px) {
+    .get-started-hero { padding: 4rem 0; }
+    .get-started-title { font-size: 2.5rem; }
+    .get-started-subtitle { font-size: 1.1rem; }
+    .trusted-logos { gap: 1.5rem; flex-wrap: wrap; }
+    .section-heading { font-size: 2rem; }
+  }
